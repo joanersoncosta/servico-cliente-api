@@ -1,3 +1,16 @@
 spring:
  application:
   name: servico-cliente-api
+
+server:
+  servlet:
+    context-path: /servico-cliente/api
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info
+  endpoint:
+    health:
+      show-details: always
