@@ -1,0 +1,10 @@
+/mvnw text eol=lf
+*.cmd text eol=crlf
+.metadata/
+RemoteSystemsTempFiles/.metadata/
+RemoteSystemsTempFiles/
+.fastRequest/
+.idea
+api-ordem/logs/
+api-usuario/logs/
+docker-compose.yml
