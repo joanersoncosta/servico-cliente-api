@@ -1,7 +1,5 @@
 package com.github.joanersoncosta.servico_cliente_api.cliente.application.api;
 
-import javax.validation.Valid;
-
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,8 +18,9 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 
-@Tag(name = "ServicoClienteAPI", description = "Controle responsavel pelas operações do cliente.")
+@Tag(name = "ClienteAPI", description = "Controle responsavel pelas operações do cliente.")
 @RestController
 @RequestMapping("/v1/cliente")
 public interface ClienteAPI {
@@ -29,7 +28,7 @@ public interface ClienteAPI {
 	@Operation(summary = "Cria novo cliente")
 	@ApiResponses(value = {
 			@ApiResponse(responseCode = "201", description = "Cliente criado"),
-			@ApiResponse(responseCode = "400", description = "Cliente já cadastrado",
+			@ApiResponse(responseCode = "409", description = "Cliente já cadastrado",
 				content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = ErrorApiResponse.class))),
 			@ApiResponse(responseCode = "500", description = "Internal server error",
 				content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = ErrorApiResponse.class)))

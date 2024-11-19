@@ -1,6 +1,6 @@
 spring:
  application:
-  name: servico-cliente-api
+  name: servico-cliente-ms
 
 server:
   servlet:
@@ -14,3 +14,9 @@ management:
   endpoint:
     health:
       show-details: always
+      
+springdoc:
+ openapi:
+  title: Cliente API
+  description: Micro-Serviço de Cliente
+  version: 1.0.0
