@@ -28,7 +28,7 @@ public interface ClienteAPI {
 	@Operation(summary = "Cria novo cliente")
 	@ApiResponses(value = {
 			@ApiResponse(responseCode = "201", description = "Cliente criado"),
-			@ApiResponse(responseCode = "409", description = "Cliente já cadastrado",
+			@ApiResponse(responseCode = "409", description = "Já existe um cliente com este email.",
 				content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = ErrorApiResponse.class))),
 			@ApiResponse(responseCode = "500", description = "Internal server error",
 				content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = ErrorApiResponse.class)))
